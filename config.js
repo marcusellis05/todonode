@@ -11,7 +11,7 @@ nconf.defaults({
 nconf.argv().env();
 
 if (process.env.MONGOLAB_URI){
-  nconf.set('db:url', db_url);
+  nconf.set('db:url', process.env.MONGOLAB_URI);
 }
 if (process.env.NODE_ENV === 'test'){
   nconf.set('db:name', 'todonode_test');
