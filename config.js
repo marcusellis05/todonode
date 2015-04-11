@@ -2,6 +2,7 @@ var nconf = require('nconf');
 
 nconf.defaults({
   port: 3000,
+  heroku: false,
   db: {
     url: 'mongodb://localhost:27017',
     name: 'todonode'
@@ -11,6 +12,7 @@ nconf.defaults({
 nconf.argv().env();
 
 if (process.env.MONGOLAB_URI){
+  nconf.set('heroku', true);
   nconf.set('db:url', process.env.MONGOLAB_URI);
 }
 if (process.env.NODE_ENV === 'test'){
