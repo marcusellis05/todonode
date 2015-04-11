@@ -1,13 +1,15 @@
-var Hapi = require('hapi'),
+
+var nconf = require('nconf'),
+    config = require('./config'),
+    Hapi = require('hapi'),
     server = new Hapi.Server(),
     routes = require('./lib/routes');
 
 server.connection({
-  port: 3000
+  port: nconf.get('port')
 });
 
 routes.attach(server);
-
 
 if (!module.parent) {
   server.start(function() {
