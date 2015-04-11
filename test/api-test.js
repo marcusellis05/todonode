@@ -5,7 +5,7 @@ var Lab = require('lab'),
     it = lab.it,
     expect = require('code').expect;
 
-var server = require('../app.js');
+var server = require('../app');
 
 var async = require('async'),
     model = require('../lib/model'),
@@ -93,7 +93,7 @@ describe('Todos', function(){
   describe('POST "/todos"', function(){
     it('creates a single todo model', function(done){
       var todo = {
-            title: 'New Test'
+            title: 'New Todo Test'
           },
           req = {
             method: 'POST',
@@ -111,7 +111,7 @@ describe('Todos', function(){
         expect(body._id).to.be.a.object();
 
         expect(body.title).to.be.a.string();
-        expect(body.title).to.equal(todo.title);
+        expect(body.title).to.equal('New Todo Test');
 
         expect(body.completed).to.be.a.boolean();
         expect(body.completed).to.equal(false);
@@ -128,7 +128,7 @@ describe('Todos', function(){
             method: 'PUT',
             url: '/todos/' + todo._id,
             payload: {
-              title: 'New Test Todo',
+              title: 'Edit Todo Test',
               completed: true
             }
           };
@@ -140,7 +140,7 @@ describe('Todos', function(){
         expect(body).to.be.a.object();
 
         expect(body.title).to.be.a.string();
-        expect(body.title).to.equal('New Test Todo');
+        expect(body.title).to.equal('Edit Todo Test');
 
         expect(body.completed).to.be.a.boolean();
         expect(body.completed).to.equal(true);
@@ -163,7 +163,7 @@ describe('Todos', function(){
 
   describe('DELETE "/todos/{id}"', function(){
     it('deletes a single todo model', function(done){
-      var todo = fixture[1],
+      var todo = fixture[2],
           req = {
             method: 'DELETE',
             url: '/todos/' + todo._id
