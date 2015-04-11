@@ -4,7 +4,7 @@
   "description": "RESTful Node API for ToDoMVC (Marionette)",
   "main": "app.js",
   "scripts": {
-    "test": "./node_modules/.bin/lab --threshold 90 test/*-test.js",
+    "test": "./node_modules/.bin/lab -t 90 test/*-test.js",
     "coverage": "./node_modules/.bin/lab test/*-test.js -r html -o backbone_marionette/coverage.html",
     "start": "node app.js",
     "setup": "npm install && npm test && npm start"

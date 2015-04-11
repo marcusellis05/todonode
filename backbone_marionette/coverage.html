@@ -417,8 +417,8 @@
       <div class="stats high">
           <div class="failures">0</div>
           <div class="skipped">0</div>
-          <div class="test-count">5</div>
-          <div class="duration">188</div>
+          <div class="test-count">8</div>
+          <div class="duration">207</div>
       </div>
       <div id="filters">
           <input type="checkbox" checked="" onchange="filter(this)" value="success" id="show-success"><label for="show-success">Show Success</label></input>
@@ -444,35 +444,56 @@
               <td class="test-title">Todos GET &quot;/todos&quot; returns a list of todos
                   
               </td>
-              <td class="test-duration">36</td>
+              <td class="test-duration">35</td>
           </tr>
           <tr class="show Todos GET_&quot;/todos/{id}&quot; success">
               <td class="test-id">2</td>
               <td class="test-title">Todos GET &quot;/todos/{id}&quot; returns a single todo model
                   
               </td>
-              <td class="test-duration">16</td>
+              <td class="test-duration">18</td>
+          </tr>
+          <tr class="show Todos GET_&quot;/todos/{id}&quot; success">
+              <td class="test-id">3</td>
+              <td class="test-title">Todos GET &quot;/todos/{id}&quot; returns a 404 error when given a bad id
+                  
+              </td>
+              <td class="test-duration">4</td>
           </tr>
           <tr class="show Todos POST_&quot;/todos&quot; success">
-              <td class="test-id">3</td>
+              <td class="test-id">4</td>
               <td class="test-title">Todos POST &quot;/todos&quot; creates a single todo model
                   
               </td>
-              <td class="test-duration">10</td>
+              <td class="test-duration">8</td>
           </tr>
           <tr class="show Todos PUT_&quot;/todos/{id}&quot; success">
-              <td class="test-id">4</td>
+              <td class="test-id">5</td>
               <td class="test-title">Todos PUT &quot;/todos/{id}&quot; updates a single todo model
                   
               </td>
-              <td class="test-duration">12</td>
+              <td class="test-duration">14</td>
+          </tr>
+          <tr class="show Todos PUT_&quot;/todos/{id}&quot; success">
+              <td class="test-id">6</td>
+              <td class="test-title">Todos PUT &quot;/todos/{id}&quot; returns a 404 error when given a bad id
+                  
+              </td>
+              <td class="test-duration">5</td>
           </tr>
           <tr class="show Todos DELETE_&quot;/todos/{id}&quot; success">
-              <td class="test-id">5</td>
+              <td class="test-id">7</td>
               <td class="test-title">Todos DELETE &quot;/todos/{id}&quot; deletes a single todo model
                   
               </td>
               <td class="test-duration">4</td>
+          </tr>
+          <tr class="show Todos DELETE_&quot;/todos/{id}&quot; success">
+              <td class="test-id">8</td>
+              <td class="test-title">Todos DELETE &quot;/todos/{id}&quot; returns a 404 error when given a bad id
+                  
+              </td>
+              <td class="test-duration">3</td>
           </tr>
           </tbody>
       </table>
@@ -484,15 +505,19 @@
             <li><a href="#tests">Test Report</a></li>
             <li><a href="#coverage">Coverage Report</a></li>
             <li>
-                <span class="cov high">76.92</span>
+                <span class="cov high">80</span>
                 <a href="#app.js"><span class="basename">app.js</span></a>
             </li>
             <li>
-                <span class="cov medium">68.09</span>
+                <span class="cov high">92.31</span>
+                <a href="#config.js"><span class="basename">config.js</span></a>
+            </li>
+            <li>
+                <span class="cov medium">73.21</span>
                 <a href="#lib/handlers.js"><span class="dirname">lib/</span><span class="basename">handlers.js</span></a>
             </li>
             <li>
-                <span class="cov high">92.31</span>
+                <span class="cov high">87.50</span>
                 <a href="#lib/model.js"><span class="dirname">lib/</span><span class="basename">model.js</span></a>
             </li>
             <li>
@@ -501,18 +526,18 @@
             </li>
         </div>
         <div class="stats high">
-            <div class="percentage">82.73%</div>
-            <div class="sloc">110</div>
-            <div class="hits">91</div>
-            <div class="misses">19</div>
+            <div class="percentage">84.67%</div>
+            <div class="sloc">137</div>
+            <div class="hits">116</div>
+            <div class="misses">21</div>
         </div>
         <div id="files">
             <div class="file">
                 <h2 id="app.js">app.js</h2>
                 <div class="stats high">
-                    <div class="percentage">76.92%</div>
-                    <div class="sloc">13</div>
-                    <div class="hits">10</div>
+                    <div class="percentage">80%</div>
+                    <div class="sloc">15</div>
+                    <div class="hits">12</div>
                     <div class="misses">3</div>
                 </div>
                 <table>
@@ -526,78 +551,198 @@
                     <tbody>
                         <tr class="hit">
                             <td class="line">1</td>
-                            <td class="hits">1</td>
-                            <td class="source">var Hapi = require(&#x27;hapi&#x27;),</td>
+                            <td class="hits"></td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line">2</td>
-                            <td class="hits"></td>
-                            <td class="source">    server = new Hapi.Server(),</td>
+                            <td class="hits">1</td>
+                            <td class="source">var nconf = require(&#x27;nconf&#x27;),</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">3</td>
                             <td class="hits"></td>
-                            <td class="source">    routes = require(&#x27;./lib/routes&#x27;);</td>
+                            <td class="source">    config = require(&#x27;./config&#x27;),</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">4</td>
                             <td class="hits"></td>
-                            <td class="source"></td>
+                            <td class="source">    Hapi = require(&#x27;hapi&#x27;),</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">5</td>
-                            <td class="hits">1</td>
-                            <td class="source">server.connection({</td>
+                            <td class="hits"></td>
+                            <td class="source">    server = new Hapi.Server(),</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">6</td>
                             <td class="hits"></td>
-                            <td class="source">  port: 3000</td>
+                            <td class="source">    routes = require(&#x27;./lib/routes&#x27;);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">7</td>
                             <td class="hits"></td>
-                            <td class="source">});</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line">8</td>
-                            <td class="hits"></td>
                             <td class="source"></td>
                         </tr>
                         <tr class="hit">
-                            <td class="line">9</td>
+                            <td class="line">8</td>
                             <td class="hits">1</td>
-                            <td class="source">routes.attach(server);</td>
+                            <td class="source">server.connection({</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">9</td>
+                            <td class="hits"></td>
+                            <td class="source">  port: nconf.get(&#x27;port&#x27;)</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">10</td>
                             <td class="hits"></td>
-                            <td class="source"></td>
+                            <td class="source">});</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">11</td>
                             <td class="hits"></td>
                             <td class="source"></td>
                         </tr>
+                        <tr class="hit">
+                            <td class="line">12</td>
+                            <td class="hits">1</td>
+                            <td class="source">routes.attach(server);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">13</td>
+                            <td class="hits"></td>
+                            <td class="source"></td>
+                        </tr>
                             <tr class="chunks">
-                                <td class="line">12</td>
+                                <td class="line">14</td>
                                 <td class="hits"></td>
                                 <td class="source"><div>if (</div><div class="miss false">!module.parent</div><div>) {</div></td>
                             </tr>
                             <tr class="miss">
-                                <td class="line">13</td>
+                                <td class="line">15</td>
                                 <td class="hits"></td>
                                 <td class="source">  server.start(function() {</td>
                             </tr>
                             <tr class="miss">
-                                <td class="line">14</td>
+                                <td class="line">16</td>
                                 <td class="hits"></td>
                                 <td class="source">    console.log(&#x27;Server running at&#x27;, server.info.uri);</td>
                             </tr>
                         <tr class="hit">
-                            <td class="line">15</td>
+                            <td class="line">17</td>
                             <td class="hits"></td>
                             <td class="source">  });</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">18</td>
+                            <td class="hits"></td>
+                            <td class="source">}</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">19</td>
+                            <td class="hits"></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">20</td>
+                            <td class="hits">1</td>
+                            <td class="source">module.exports = server;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="file">
+                <h2 id="config.js">config.js</h2>
+                <div class="stats high">
+                    <div class="percentage">92.31%</div>
+                    <div class="sloc">13</div>
+                    <div class="hits">12</div>
+                    <div class="misses">1</div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Line</th>
+                            <th>Hits</th>
+                            <th>Source</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hit">
+                            <td class="line">1</td>
+                            <td class="hits">1</td>
+                            <td class="source">var nconf = require(&#x27;nconf&#x27;);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">2</td>
+                            <td class="hits"></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">3</td>
+                            <td class="hits">1</td>
+                            <td class="source">nconf.defaults({</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">4</td>
+                            <td class="hits"></td>
+                            <td class="source">  port: 3000,</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">5</td>
+                            <td class="hits"></td>
+                            <td class="source">  heroku: false,</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">6</td>
+                            <td class="hits"></td>
+                            <td class="source">  db: {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">7</td>
+                            <td class="hits"></td>
+                            <td class="source">    url: &#x27;mongodb://localhost:27017&#x27;,</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">8</td>
+                            <td class="hits"></td>
+                            <td class="source">    name: &#x27;todonode&#x27;</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">9</td>
+                            <td class="hits"></td>
+                            <td class="source">  }</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">10</td>
+                            <td class="hits"></td>
+                            <td class="source">})</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">11</td>
+                            <td class="hits"></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">12</td>
+                            <td class="hits">1</td>
+                            <td class="source">nconf.argv().env();</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">13</td>
+                            <td class="hits"></td>
+                            <td class="source"></td>
+                        </tr>
+                            <tr class="chunks">
+                                <td class="line">14</td>
+                                <td class="hits"></td>
+                                <td class="source"><div>if (</div><div class="miss true">process.env.NODE_ENV === &#x27;test&#x27;</div><div>){</div></td>
+                            </tr>
+                        <tr class="hit">
+                            <td class="line">15</td>
+                            <td class="hits">1</td>
+                            <td class="source">  nconf.set(&#x27;db:name&#x27;, nconf.get(&#x27;db:name&#x27;) + &#x27;_test&#x27;);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">16</td>
@@ -609,20 +754,15 @@
                             <td class="hits"></td>
                             <td class="source"></td>
                         </tr>
-                        <tr class="hit">
-                            <td class="line">18</td>
-                            <td class="hits">1</td>
-                            <td class="source">module.exports = server;</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
             <div class="file">
                 <h2 id="lib/handlers.js">lib/handlers.js</h2>
                 <div class="stats medium">
-                    <div class="percentage">68.09%</div>
-                    <div class="sloc">47</div>
-                    <div class="hits">32</div>
+                    <div class="percentage">73.21%</div>
+                    <div class="sloc">56</div>
+                    <div class="hits">41</div>
                     <div class="misses">15</div>
                 </div>
                 <table>
@@ -701,7 +841,7 @@
                         </tr>
                         <tr class="hit">
                             <td class="line">14</td>
-                            <td class="hits">1</td>
+                            <td class="hits">2</td>
                             <td class="source">  model.findById(req.params.id, function(err, todo){</td>
                         </tr>
                             <tr class="chunks">
@@ -726,33 +866,33 @@
                         </tr>
                         <tr class="hit">
                             <td class="line">19</td>
-                            <td class="hits">1</td>
-                            <td class="source">    reply(null, todo);</td>
+                            <td class="hits">2</td>
+                            <td class="source">    if (!todo){</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">20</td>
-                            <td class="hits"></td>
-                            <td class="source">  });</td>
+                            <td class="hits">1</td>
+                            <td class="source">      return reply(null).code(404);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">21</td>
                             <td class="hits"></td>
-                            <td class="source">};</td>
+                            <td class="source">    }</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">22</td>
-                            <td class="hits"></td>
-                            <td class="source"></td>
+                            <td class="hits">1</td>
+                            <td class="source">    reply(null, todo);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">23</td>
-                            <td class="hits">1</td>
-                            <td class="source">module.exports.create = function(req, reply){</td>
+                            <td class="hits"></td>
+                            <td class="source">  });</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">24</td>
-                            <td class="hits">1</td>
-                            <td class="source">  var todo = new model(req.payload);</td>
+                            <td class="hits"></td>
+                            <td class="source">};</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">25</td>
@@ -762,145 +902,190 @@
                         <tr class="hit">
                             <td class="line">26</td>
                             <td class="hits">1</td>
-                            <td class="source">  todo.save(function(err, todo){</td>
-                        </tr>
-                            <tr class="chunks">
-                                <td class="line">27</td>
-                                <td class="hits"></td>
-                                <td class="source"><div>    if (</div><div class="miss false">err</div><div>){</div></td>
-                            </tr>
-                            <tr class="miss">
-                                <td class="line">28</td>
-                                <td class="hits"></td>
-                                <td class="source">      console.log(err);</td>
-                            </tr>
-                            <tr class="miss">
-                                <td class="line">29</td>
-                                <td class="hits"></td>
-                                <td class="source">      return reply(err, null);</td>
-                            </tr>
-                        <tr class="hit">
-                            <td class="line">30</td>
-                            <td class="hits"></td>
-                            <td class="source">    }</td>
+                            <td class="source">module.exports.create = function(req, reply){</td>
                         </tr>
                         <tr class="hit">
-                            <td class="line">31</td>
+                            <td class="line">27</td>
                             <td class="hits">1</td>
-                            <td class="source">    reply(null, todo);</td>
+                            <td class="source">  var todo = new model(req.payload);</td>
                         </tr>
                         <tr class="hit">
-                            <td class="line">32</td>
-                            <td class="hits"></td>
-                            <td class="source">  });</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line">33</td>
-                            <td class="hits"></td>
-                            <td class="source">};</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line">34</td>
+                            <td class="line">28</td>
                             <td class="hits"></td>
                             <td class="source"></td>
                         </tr>
                         <tr class="hit">
+                            <td class="line">29</td>
+                            <td class="hits">1</td>
+                            <td class="source">  todo.save(function(err, todo){</td>
+                        </tr>
+                            <tr class="chunks">
+                                <td class="line">30</td>
+                                <td class="hits"></td>
+                                <td class="source"><div>    if (</div><div class="miss false">err</div><div>){</div></td>
+                            </tr>
+                            <tr class="miss">
+                                <td class="line">31</td>
+                                <td class="hits"></td>
+                                <td class="source">      console.log(err);</td>
+                            </tr>
+                            <tr class="miss">
+                                <td class="line">32</td>
+                                <td class="hits"></td>
+                                <td class="source">      return reply(err, null);</td>
+                            </tr>
+                        <tr class="hit">
+                            <td class="line">33</td>
+                            <td class="hits"></td>
+                            <td class="source">    }</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">34</td>
+                            <td class="hits">1</td>
+                            <td class="source">    reply(null, todo);</td>
+                        </tr>
+                        <tr class="hit">
                             <td class="line">35</td>
+                            <td class="hits"></td>
+                            <td class="source">  });</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">36</td>
+                            <td class="hits"></td>
+                            <td class="source">};</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">37</td>
+                            <td class="hits"></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">38</td>
                             <td class="hits">1</td>
                             <td class="source">module.exports.update = function(req, reply){</td>
                         </tr>
                         <tr class="hit">
-                            <td class="line">36</td>
-                            <td class="hits">1</td>
+                            <td class="line">39</td>
+                            <td class="hits">2</td>
                             <td class="source">  model.findByIdAndUpdate(req.params.id, req.payload, function(err, todo){</td>
                         </tr>
                             <tr class="chunks">
-                                <td class="line">37</td>
+                                <td class="line">40</td>
                                 <td class="hits"></td>
                                 <td class="source"><div>    if (</div><div class="miss false">err</div><div>){</div></td>
                             </tr>
                             <tr class="miss">
-                                <td class="line">38</td>
+                                <td class="line">41</td>
                                 <td class="hits"></td>
                                 <td class="source">      console.log(err);</td>
                             </tr>
                             <tr class="miss">
-                                <td class="line">39</td>
+                                <td class="line">42</td>
                                 <td class="hits"></td>
                                 <td class="source">      return reply(err, null);</td>
                             </tr>
                         <tr class="hit">
-                            <td class="line">40</td>
+                            <td class="line">43</td>
                             <td class="hits"></td>
                             <td class="source">    }</td>
                         </tr>
                         <tr class="hit">
-                            <td class="line">41</td>
-                            <td class="hits">1</td>
-                            <td class="source">    reply(null, req.payload);</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line">42</td>
-                            <td class="hits"></td>
-                            <td class="source">  });</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line">43</td>
-                            <td class="hits"></td>
-                            <td class="source">};</td>
-                        </tr>
-                        <tr class="hit">
                             <td class="line">44</td>
-                            <td class="hits"></td>
-                            <td class="source"></td>
+                            <td class="hits">2</td>
+                            <td class="source">    if (!todo){</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">45</td>
                             <td class="hits">1</td>
-                            <td class="source">module.exports.delete = function(req, reply){</td>
+                            <td class="source">      return reply(null).code(404);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">46</td>
-                            <td class="hits">1</td>
-                            <td class="source">  model.findByIdAndRemove(req.params.id, function(err, todo){</td>
-                        </tr>
-                            <tr class="chunks">
-                                <td class="line">47</td>
-                                <td class="hits"></td>
-                                <td class="source"><div>    if (</div><div class="miss false">err</div><div>){</div></td>
-                            </tr>
-                            <tr class="miss">
-                                <td class="line">48</td>
-                                <td class="hits"></td>
-                                <td class="source">      console.log(err);</td>
-                            </tr>
-                            <tr class="miss">
-                                <td class="line">49</td>
-                                <td class="hits"></td>
-                                <td class="source">      return reply(err, null);</td>
-                            </tr>
-                        <tr class="hit">
-                            <td class="line">50</td>
                             <td class="hits"></td>
                             <td class="source">    }</td>
                         </tr>
                         <tr class="hit">
-                            <td class="line">51</td>
+                            <td class="line">47</td>
                             <td class="hits">1</td>
-                            <td class="source">    reply(null, todo);</td>
+                            <td class="source">    reply(null, req.payload);</td>
                         </tr>
                         <tr class="hit">
-                            <td class="line">52</td>
+                            <td class="line">48</td>
                             <td class="hits"></td>
                             <td class="source">  });</td>
                         </tr>
                         <tr class="hit">
-                            <td class="line">53</td>
+                            <td class="line">49</td>
                             <td class="hits"></td>
                             <td class="source">};</td>
                         </tr>
                         <tr class="hit">
-                            <td class="line">54</td>
+                            <td class="line">50</td>
+                            <td class="hits"></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">51</td>
+                            <td class="hits">1</td>
+                            <td class="source">module.exports.delete = function(req, reply){</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">52</td>
+                            <td class="hits">2</td>
+                            <td class="source">  model.findByIdAndRemove(req.params.id, function(err, todo){</td>
+                        </tr>
+                            <tr class="chunks">
+                                <td class="line">53</td>
+                                <td class="hits"></td>
+                                <td class="source"><div>    if (</div><div class="miss false">err</div><div>){</div></td>
+                            </tr>
+                            <tr class="miss">
+                                <td class="line">54</td>
+                                <td class="hits"></td>
+                                <td class="source">      console.log(err);</td>
+                            </tr>
+                            <tr class="miss">
+                                <td class="line">55</td>
+                                <td class="hits"></td>
+                                <td class="source">      return reply(err, null);</td>
+                            </tr>
+                        <tr class="hit">
+                            <td class="line">56</td>
+                            <td class="hits"></td>
+                            <td class="source">    }</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">57</td>
+                            <td class="hits">2</td>
+                            <td class="source">    if (!todo){</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">58</td>
+                            <td class="hits">1</td>
+                            <td class="source">      return reply(null).code(404);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">59</td>
+                            <td class="hits"></td>
+                            <td class="source">    }</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">60</td>
+                            <td class="hits">1</td>
+                            <td class="source">    reply(null, todo);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">61</td>
+                            <td class="hits"></td>
+                            <td class="source">  });</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">62</td>
+                            <td class="hits"></td>
+                            <td class="source">};</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">63</td>
                             <td class="hits"></td>
                             <td class="source"></td>
                         </tr>
@@ -910,10 +1095,10 @@
             <div class="file">
                 <h2 id="lib/model.js">lib/model.js</h2>
                 <div class="stats high">
-                    <div class="percentage">92.31%</div>
-                    <div class="sloc">13</div>
-                    <div class="hits">12</div>
-                    <div class="misses">1</div>
+                    <div class="percentage">87.50%</div>
+                    <div class="sloc">16</div>
+                    <div class="hits">14</div>
+                    <div class="misses">2</div>
                 </div>
                 <table>
                     <thead>
@@ -932,82 +1117,82 @@
                         <tr class="hit">
                             <td class="line">2</td>
                             <td class="hits"></td>
-                            <td class="source">    Mongoose = require(&#x27;mongoose&#x27;),</td>
+                            <td class="source">    nconf = require(&#x27;nconf&#x27;),</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">3</td>
                             <td class="hits"></td>
-                            <td class="source">    Schema = Mongoose.Schema;</td>
+                            <td class="source">    Mongoose = require(&#x27;mongoose&#x27;),</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">4</td>
                             <td class="hits"></td>
+                            <td class="source">    Schema = Mongoose.Schema;</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">5</td>
+                            <td class="hits"></td>
                             <td class="source"></td>
                         </tr>
                             <tr class="chunks">
-                                <td class="line">5</td>
+                                <td class="line">6</td>
                                 <td class="hits"></td>
-                                <td class="source"><div>var db = </div><div class="miss true">process.env.NODE_ENV === &#x27;test&#x27;</div><div> ? &#x27;todonode_test&#x27; : </div><div class="miss never">&#x27;todonode&#x27;</div><div>;</div></td>
+                                <td class="source"><div>if (</div><div class="miss false">nconf.get(&#x27;heroku&#x27;)</div><div>){</div></td>
+                            </tr>
+                            <tr class="miss">
+                                <td class="line">7</td>
+                                <td class="hits"></td>
+                                <td class="source">  Mongoose.connect(nconf.get(&#x27;db:url&#x27;));</td>
                             </tr>
                         <tr class="hit">
-                            <td class="line">6</td>
-                            <td class="hits"></td>
-                            <td class="source"></td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line">7</td>
-                            <td class="hits">1</td>
-                            <td class="source">var connection_string = util.format(&#x27;mongodb://%s:%s/%s&#x27;, &#x27;localhost&#x27;, &#x27;27017&#x27;, db);</td>
-                        </tr>
-                        <tr class="hit">
                             <td class="line">8</td>
-                            <td class="hits">1</td>
-                            <td class="source">Mongoose.connect(connection_string);</td>
+                            <td class="hits"></td>
+                            <td class="source">} else {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">9</td>
-                            <td class="hits"></td>
-                            <td class="source"></td>
+                            <td class="hits">1</td>
+                            <td class="source">  Mongoose.connect(nconf.get(&#x27;db:url&#x27;) + &#x27;/&#x27; + nconf.get(&#x27;db:name&#x27;));</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">10</td>
                             <td class="hits"></td>
-                            <td class="source"></td>
+                            <td class="source">}</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">11</td>
-                            <td class="hits">1</td>
-                            <td class="source">var ToDoSchema = new Schema({</td>
+                            <td class="hits"></td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line">12</td>
                             <td class="hits"></td>
-                            <td class="source">  title:      { type: String,  default: &#x27;&#x27;, required: true, trim: true },</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line">13</td>
-                            <td class="hits"></td>
-                            <td class="source">  completed:  { type: Boolean, default: false },</td>
+                            <td class="hits">1</td>
+                            <td class="source">var ToDoSchema = new Schema({</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">14</td>
                             <td class="hits"></td>
-                            <td class="source">  created:    { type: Date,    default: Date.now }</td>
+                            <td class="source">  title:      { type: String,  default: &#x27;&#x27;, required: true, trim: true },</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">15</td>
                             <td class="hits"></td>
-                            <td class="source">});</td>
+                            <td class="source">  completed:  { type: Boolean, default: false },</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">16</td>
                             <td class="hits"></td>
-                            <td class="source"></td>
+                            <td class="source">  created:    { type: Date,    default: Date.now }</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">17</td>
-                            <td class="hits">1</td>
-                            <td class="source">var ToDo = Mongoose.model(&#x27;todo&#x27;, ToDoSchema);</td>
+                            <td class="hits"></td>
+                            <td class="source">});</td>
                         </tr>
                         <tr class="hit">
                             <td class="line">18</td>
@@ -1016,6 +1201,16 @@
                         </tr>
                         <tr class="hit">
                             <td class="line">19</td>
+                            <td class="hits">1</td>
+                            <td class="source">var ToDo = Mongoose.model(&#x27;todo&#x27;, ToDoSchema);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">20</td>
+                            <td class="hits"></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line">21</td>
                             <td class="hits">1</td>
                             <td class="source">module.exports = ToDo;</td>
                         </tr>

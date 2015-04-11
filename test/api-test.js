@@ -77,6 +77,17 @@ describe('Todos', function(){
         done();
       });
     });
+    it('returns a 404 error when given a bad id', function(done){
+      var req = {
+            method: 'GET',
+            url: '/todos/555555555555555555555555'
+          };
+
+      server.inject(req, function(res){
+        expect(res.statusCode).to.equal(404);
+        done();
+      });
+    });
   });
 
   describe('POST "/todos"', function(){
@@ -94,7 +105,7 @@ describe('Todos', function(){
         var body = res.result;
         
         expect(res.statusCode).to.equal(200);
-        expect(body).to.be.instanceOf(Object);
+        expect(body).to.be.a.object();
 
         expect(body._id).to.exist();
         expect(body._id).to.be.a.object();
@@ -126,10 +137,7 @@ describe('Todos', function(){
         var body = res.result;
         
         expect(res.statusCode).to.equal(200);
-        expect(body).to.be.instanceOf(Object);
-
-        // expect(body._id).to.exist();
-        // expect(body._id).to.be.a.object();
+        expect(body).to.be.a.object();
 
         expect(body.title).to.be.a.string();
         expect(body.title).to.equal('New Test Todo');
@@ -137,6 +145,17 @@ describe('Todos', function(){
         expect(body.completed).to.be.a.boolean();
         expect(body.completed).to.equal(true);
 
+        done();
+      });
+    });
+    it('returns a 404 error when given a bad id', function(done){
+      var req = {
+            method: 'PUT',
+            url: '/todos/555555555555555555555555'
+          };
+
+      server.inject(req, function(res){
+        expect(res.statusCode).to.equal(404);
         done();
       });
     });
@@ -154,11 +173,22 @@ describe('Todos', function(){
         var body = res.result;
         
         expect(res.statusCode).to.equal(200);
-        expect(body).to.be.instanceOf(Object);
+        expect(body).to.be.a.object();
 
         expect(body._id).to.exist();
         expect(body._id).to.be.a.object();
 
+        done();
+      });
+    });
+    it('returns a 404 error when given a bad id', function(done){
+      var req = {
+            method: 'DELETE',
+            url: '/todos/555555555555555555555555'
+          };
+
+      server.inject(req, function(res){
+        expect(res.statusCode).to.equal(404);
         done();
       });
     });
